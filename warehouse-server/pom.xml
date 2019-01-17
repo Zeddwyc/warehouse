@@ -9,9 +9,11 @@
 		<version>2.1.2.RELEASE</version>
 		<relativePath />
 	</parent>
+	
 	<groupId>app.warehouse.ws</groupId>
 	<artifactId>warehouse-server</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
 	<name>warehouse-server</name>
 	<description>Warehouse project</description>
 
@@ -54,6 +56,11 @@
 			<groupId>javax.xml.bind</groupId>
 			<artifactId>jaxb-api</artifactId>
 		</dependency>
+		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-tomcat</artifactId>
+		    <scope>provided</scope>
+		</dependency>
 		
 		<!-- Test dependencies -->
 		<dependency>
@@ -66,6 +73,18 @@
 			<artifactId>junit-jupiter-engine</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
+		<!-- Swagger -->
+		<!-- <dependency>
+		    <groupId>io.springfox</groupId>
+		    <artifactId>springfox-swagger2</artifactId>
+		    <version>2.9.2</version>
+		</dependency>
+		<dependency>
+		    <groupId>io.springfox</groupId>
+		    <artifactId>springfox-swagger-ui</artifactId>
+		    <version>2.9.2</version>
+		</dependency> -->
 		
 		<!-- DB migration -->
 		<!-- <dependency>
@@ -106,9 +125,16 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-cache</artifactId>
 		</dependency> -->
+		
+		<dependency>
+		    <groupId>com.weddini.throttling</groupId>
+		    <artifactId>spring-boot-throttling-starter</artifactId>
+		    <version>0.0.9</version>
+		</dependency>
 	</dependencies>
 
 	<build>
+		<finalName>warehouse-server</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
@@ -116,5 +142,15 @@
 			</plugin>
 		</plugins>
 	</build>
-
+	
+	<repositories>
+	    <repository>
+	        <id>spring-boot-throttling-repo</id>
+	        <url>https://raw.github.com/weddini/spring-boot-throttling/mvn-repo/</url>
+	        <snapshots>
+	            <enabled>true</enabled>
+	            <updatePolicy>always</updatePolicy>
+	        </snapshots>
+	    </repository>
+	</repositories>
 </project>
