@@ -7,23 +7,21 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class StringUtils {
-	
+
 	private final Random RANDOM = new SecureRandom();
-	private final String ALPHABET = "0123456789ABCDEFGHIJKLMNOPQRSTUVWYZabcdefghijklmnopqrstuvwyz";
 
-	public String generate() {
-		return generateRandomString(30);
+	public String generate(int length, RandomType type) {
+		if (length <= 0 || length >= 50) {
+			length = 30;
+		}
+		return generateRandomString(length, type);
 	}
 
-	public String generate(int length) {
-		return generateRandomString(length);
-	}
-
-	private String generateRandomString(int length) {
+	private String generateRandomString(int length, RandomType type) {
 		StringBuilder builder = new StringBuilder(length);
 
 		for (int i = 0; i < length; i++) {
-			builder.append(ALPHABET.charAt(RANDOM.nextInt(ALPHABET.length())));
+			builder.append(type.getChars().charAt(RANDOM.nextInt(type.getChars().length())));
 		}
 
 		return new String(builder);
