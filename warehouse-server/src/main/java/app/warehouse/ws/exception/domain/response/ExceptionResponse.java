@@ -15,7 +15,7 @@ public class ExceptionResponse {
 	public ExceptionResponse(String message, String path, String exception) {
 		this.timestamp = LocalDateTime.now();
 		this.message = message;
-		this.path = path;
 		this.exception = exception;
+		this.path = path;
 	}
 }
