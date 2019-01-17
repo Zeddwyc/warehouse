@@ -1,4 +1,4 @@
-package app.warehouse.ws.exception.domain.response;
+package app.warehouse.ws.domain.response;
 
 import java.time.LocalDateTime;
 
