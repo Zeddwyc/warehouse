@@ -2,6 +2,7 @@ package app.warehouse.ws.utils;
 
 import java.security.SecureRandom;
 import java.util.Random;
+import java.util.UUID;
 
 import org.springframework.stereotype.Component;
 
@@ -25,5 +26,9 @@ public class StringUtils {
 		}
 
 		return new String(builder);
+	}
+	
+	public String generateUUIDString() {
+		return UUID.randomUUID().toString();
 	}
 }
