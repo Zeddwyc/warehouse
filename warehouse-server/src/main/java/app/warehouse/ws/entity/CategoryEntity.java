@@ -1,7 +1,5 @@
 package app.warehouse.ws.entity;
 
-import java.time.LocalDateTime;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -34,7 +32,7 @@ public class CategoryEntity {
 
 	@ManyToOne
 	@JoinColumn(name = "parent_id", nullable = true)
-	private CategoryEntity parentCategory;
+	private CategoryEntity parent;
 	
 	@Column(name = "is_archived", columnDefinition = "BOOLEAN DEFAULT FALSE", nullable = false)
 	private boolean isArchived;
