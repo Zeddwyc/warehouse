@@ -74,6 +74,18 @@
 			<scope>test</scope>
 		</dependency>
 		
+		<!-- Parser -->
+		<dependency>
+		    <groupId>org.jsoup</groupId>
+		    <artifactId>jsoup</artifactId>
+		    <version>1.11.3</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-quartz</artifactId>
+		</dependency>
+		
 		<!-- Swagger -->
 		<!-- <dependency>
 		    <groupId>io.springfox</groupId>
@@ -116,10 +128,6 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-mail</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-quartz</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
